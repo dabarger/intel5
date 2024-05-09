@@ -1,0 +1,15 @@
+name: pull_request_trigger_for issue
+on: 
+  issues:
+    types: opened
+    branches:
+     - main
+  
+# Testing our first workflow
+
+jobs: 
+  job1:
+    runs-on: ubuntu-latest 
+    steps:
+        - name: step1
+          run: echo "A new issue has been opened please check/address"        
