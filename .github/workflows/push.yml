@@ -1,0 +1,17 @@
+name: push_event_trigger
+on: 
+  push:  
+    branches:
+    - main
+    - dev
+  
+
+# Testing our first workflow
+
+jobs: 
+  job1:
+    runs-on: ubuntu-latest 
+    steps:
+      - name: Run a one-line script
+        run: echo "A push event triggered this workflow"
+        
