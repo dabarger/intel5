@@ -1,4 +1,4 @@
-name: job-success
+name: 2job_workflow
 on: 
   pull_request:
     branches:
