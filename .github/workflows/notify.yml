@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest 
     steps:
       - name: step1
-        env:
-          run: | 
+    env:
+      run: | 
            echo "$greetings from $name $middlename $lastname, job1 of workflow1 in environment $environment"
            sleep 10
            hostname
