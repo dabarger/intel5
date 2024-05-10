@@ -1,18 +1,15 @@
 name: notify
 on: 
-  push:  
+  push:
     branches:
-    - main
-    - dev
-
-jobs: 
-  build:
-    runs-on: ubuntu-latest 
+      - main
+      - dev
+jobs:
+  build: 
+    runs-on: ubuntu-latest
     steps:
       - name: step1
-    env:
-      run: | 
-           echo "$greetings from $name $middlename $lastname, job1 of workflow1 in environment $environment"
-           sleep 10
-           hostname
-      
+        run: |
+          echo "${{ vars.GREETINGS }} from $name $lastname, job1 of workflow1 running in environment $environment"
+          sleep 10
+          hostname
