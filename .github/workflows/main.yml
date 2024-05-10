@@ -16,10 +16,13 @@ env:
 jobs: 
   build:
     runs-on: ubuntu-latest 
+    env:
+      environment: Dev
+      lastname: Barger
     steps:
         - name: step1
           run: | 
-           echo "hello from $name, job1 of workflow1"
+           echo "hello from $name $lastname, job1 of workflow1 in environment $environment"
            sleep 30
            hostname
         - name: my step2
@@ -38,10 +41,13 @@ jobs:
             echo "final step4 execution done"
   test:
     runs-on: self-hosted
+    env:
+      environment: staging
+      lastname: Barger
     steps:
         - name: step1
           run: |
-            echo "hello from $name, job2 of workflow1"
+            echo "hello from $name $lastname, job1 of workflow1 in environment $environment"
             sleep 30
             hostname
         - name: my step2
