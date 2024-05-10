@@ -1,4 +1,4 @@
-name: continous-build
+name: day5
 on: 
   push:
     branches:
@@ -24,7 +24,7 @@ jobs:
           name: Sandeep
         run: |
           echo "$greetings from $name $lastname, job1 of workflow1 running in environment ${{ vars.environment}}"
-          echo "Running on server ${{ vars.servername}} with credentials ${{ secrets.SERVER_PASSWD}} and API KEY ${{ secrets.API KEY}} "
+          echo "Running on server ${{ vars.servername}} with credentials ${{ secrets.SERVER_PASSWD }} and API KEY ${{ secrets.APIKEY }} "
           sleep 10
           hostname
       - name: my step2
@@ -42,12 +42,14 @@ jobs:
           uname -a
           echo "final step4 execution done"
   test: 
-    runs-on: self-hosted
+    runs-on: gagan
     environment: test
     steps:
       - name: step1
         run: |
-           echo "Running on server ${{ vars.servername}} with credentials ${{ secrets.SERVER_PASSWD}} and API KEY ${{ secrets.API KEY}} " >> /tmp/actionfile
+           echo "Running on server ${{ vars.servername}} with credentials ${{ secrets.SERVER_PASSWD }} and API KEY ${{ secrets.APIKEY }} "
+           echo "Running on server ${{ vars.servername}} with credentials ${{ secrets.SERVER_PASSWD }} and API KEY ${{ secrets.APIKEY }} " >> /tmp/actionfile
+           echo "Running on server ${{ vars.servername}} "
            sleep 30
            hostname
       - name: my step2
