@@ -1,0 +1,18 @@
+name: notify
+on: 
+  push:  
+    branches:
+    - main
+    - dev
+
+jobs: 
+  build:
+    runs-on: ubuntu-latest 
+    steps:
+      - name: step1
+        env:
+          run: | 
+           echo "$greetings from $name $lastname, job1 of workflow1 in environment $environment"
+           sleep 30
+           hostname
+      
