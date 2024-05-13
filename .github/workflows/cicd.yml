@@ -15,7 +15,7 @@ jobs:
           sleep 10
       - name: my step2
         run: |
-          echo "$greetings from $name"
+          echo "hello from step2"
           sleep 10
   test: 
      runs-on: ubuntu-latest
@@ -29,7 +29,7 @@ jobs:
         run: |
           echo "$greetings from $name"
           sleep 10
-          echo "hello from $name"  
+          echo "hello from step2"  
           sleep 10
   deploy: 
      runs-on: ubuntu-latest
@@ -41,7 +41,7 @@ jobs:
           sleep 10
       - name: my step2
         run: |
-          echo "$greetings from $name"
+          echo "hello from step2"
 
   notification-start: 
     runs-on: ubuntu-latest
@@ -50,6 +50,4 @@ jobs:
         run: |
           echo "Job started"
           sleep 10
-          sleep 10
-          echo "hello from $name"  
-          sleep 10
+         
